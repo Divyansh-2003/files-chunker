@@ -195,43 +195,4 @@ if uploaded_files and st.button("🚀 Process Files"):
             with open(Path(OUTPUT_DIR) / z, "rb") as f:
                 st.download_button(f"📥 {z}", f, file_name=z)
 
-# --- DEPLOYMENT FILES FOR RENDER ---
-# requirements.txt
-'''
-streamlit
-humanfriendly
-'''
-
-# Procfile
-'''
-web: sh setup.sh && streamlit run app.py
-'''
-
-# setup.sh
-'''
-mkdir -p ~/.streamlit/
-echo "[general]" > ~/.streamlit/credentials.toml
-echo "email = \"you@example.com\"" >> ~/.streamlit/credentials.toml
-echo "[server]" > ~/.streamlit/config.toml
-echo "headless = true" >> ~/.streamlit/config.toml
-echo "enableCORS=false" >> ~/.streamlit/config.toml
-echo "port = $PORT" >> ~/.streamlit/config.toml
-'''
-
-# render.yaml (optional)
-'''
-services:
-  - type: web
-    name: smart-file-chunker
-    env: python
-    buildCommand: "pip install -r requirements.txt"
-    startCommand: "streamlit run app.py"
-    plan: free
-'''
-
-# Place the main Python file as app.py for Render deployment
-
-# All above files are required if you want to deploy using Render
-# You can zip them all together and upload to https://render.com
-
-# --- END ---
+    
