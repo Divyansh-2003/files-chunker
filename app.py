@@ -117,8 +117,6 @@ This archive contains chunked ZIP files divided into two categories:
 
 2. Independent/
    - Contains ZIPs of small files or folders which can be used independently.
-
-Note: To upload a folder, please ZIP it first before uploading. Browsers do not support raw folder uploads.
 """
         allzip.writestr("README.txt", readme.strip())
 
