@@ -132,6 +132,21 @@ st.markdown("""
 > Individual files like PDFs or videos can be uploaded directly.
 """)
 
+st.markdown("""
+    <style>
+    .stApp {
+        background-color: #a2a1a2; /* Set background color to #a2a1a2 */
+    }
+
+
+    .stButton > button:hover {
+        background-color: #5f5f5f; /* Slightly darker shade for hover */
+    }
+    </style>
+""", unsafe_allow_html=True)
+
+
+
 # Reset button
 if st.button("🔄 RESET SESSION"):
     if os.path.exists(BASE_TEMP_DIR):
